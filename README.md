@@ -1,1 +1,1 @@
-"# OptimalProduct-AISoftDevBookChapter" 
+# OptimalProduct-AISoftDevBookChapter
