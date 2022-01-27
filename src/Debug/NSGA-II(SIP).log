@@ -1,0 +1,25 @@
+﻿  Allocation.c
+  Crossover.c
+  CrowdDistance.c
+  IndividualComparison.c
+  Evaluation.c
+  EnvironmentSelection.c
+  Initialisation.c
+  List.c
+  MatingSelection.c
+  Merging.c
+  Mutation.c
+  main.c
+C:\workspace\research\papers\ai4software-bookchapter\repositories\OptimalProduct-AISoftDevBookChapter\src\main.c(67,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\workspace\research\papers\ai4software-bookchapter\repositories\OptimalProduct-AISoftDevBookChapter\src\main.c(68,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\workspace\research\papers\ai4software-bookchapter\repositories\OptimalProduct-AISoftDevBookChapter\src\main.c(69,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Problem.c
+  Random.c
+C:\workspace\research\papers\ai4software-bookchapter\repositories\OptimalProduct-AISoftDevBookChapter\src\Random.c(96,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Rank.c
+  Report.c
+C:\workspace\research\papers\ai4software-bookchapter\repositories\OptimalProduct-AISoftDevBookChapter\src\Report.c(14,6): warning C4101: 'i': unreferenced local variable
+  Sorting.c
+  Global.c
+  Generating Code...
+  NSGA-II(SIP).vcxproj -> C:\workspace\research\papers\ai4software-bookchapter\repositories\OptimalProduct-AISoftDevBookChapter\src\Debug\NSGA-II(SIP).exe

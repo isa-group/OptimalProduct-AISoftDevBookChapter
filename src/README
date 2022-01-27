@@ -1,0 +1,134 @@
+/*==========================================================================
+//  Implementation of SIP
+//  Last update 11, FEB, 2016
+//
+//
+//  Please find details of SIP in the following paper
+//  R. M. Hierons, M. Li, X. Liu, S. Segura, and W. Zheng. SIP: Optimal product selection from feature models using many-objective 
+//  evolutionary optimisation. ACM Transactions on Software Engineering and Methodology, 2016, in press.
+//
+//
+//  The source code of the EA part was implemented by Miqing Li (http://www.cs.bham.ac.uk/~limx) 
+//  and the encoding part (i.e. AntiCode.h and Violation.h) by Wei Zheng 
+//
+//  The codes are free for reserach work.
+//  If you have any problem with the source codes, please contact
+//  Miqing Li at limitsing@gmail.com 
+===========================================================================*/
+
+
+
+The source codes can be used in both the Windows and Linux operating systems, and can be compiled by the GCC or Visual Studio.
+
+This package includes the codes of six EMO algorithms: NSGA-II, IBEA, MOEA/D-WS, MOEA/D-TCH, MOEA/D-PBI, and SPEA2+SDE.
+
+Each EMO algorithm has 9 SPL models: BerkeleyDB, ERS, WebPortal, EShop, Drupal, AmazonEC2, DrupalReal, AmazonEC2Real, and Random model.
+
+The output of each algorithm is the final population with respect to both bindary string and objective vector: the populationVar and populationObj files.
+
+To run one SPL model, you need to activate it (and inactivate all other models) in four files: main.c, Problem.c, AntiCode.h, and Violation.h.
+ 
+main.c is the main program of the algorithm codes.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Note that the 1+n approach of SIP in the six EMO algorithms is implemented differently: 
+
+For the algorithms who use Pareto dominance as the selection criteria (i.e., NSGA-II and SPEA2+SDE), the main objective is integrated into the Pareto dominance  comparison procedure;
+
+For the algorithms who use an indicator as the selection criteria (i.e., IBEA), the main objective is integrated into the indicator comparison procedure;
+
+For the algorithms who use a scalarizing value as the selection criteria (i.e., MOEA/D-WS, MOEA/D-TCH and MOEA/D-PBI), the main objective is integrated into the scalarizing function comparison procedure.   
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+Regarding the Hypervolume (HV) calculation:
+
+Before calculating the HV of the final population, we normalise each objective value according to the following procedure (so the reference point is {1,1,1,...1}):  
+
+For the objective being minimised, we have (obj[i] - min[i])/(max[i] - min[i]);
+
+For the objective being maximised, we have (max[i] - obj[i])/(max[i] - min[i]);
+
+Where obj[i] is the value of the ith objective, min[i] and max[i] is the problem range for the ith objective.
+
+Note that we calculate the HV using the valid individuals (i.e., first objective value = 0) in the final population and considering all the secondary objectives.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+The range of the secondary objectives (for the HV calculation):
+
+The minimum value is zero and the maximum value is below:
+
+BerkeleyDB:
+	max[1] = 13;
+	max[2] = 5;
+	max[3] = 47;
+	max[4] = 140.1;
+
+
+ERS:
+	max[1] = 36;
+	max[2] = 18;
+	max[3] = 94;
+	max[4] = 378.9;
+
+
+WebPortal:
+	maxValue[1] = 43;
+	maxValue[2] = 15;
+	maxValue[3] = 156;
+	maxValue[4] = 401.3;
+
+
+
+EShop:
+	maxValue[1] = 290;
+	maxValue[2] = 159;
+	maxValue[3] = 696;
+	maxValue[4] = 2833.9;
+
+
+
+Drupal:
+	maxValue[1] = 48;
+	maxValue[2] = 22;
+	maxValue[3] = 141;
+	maxValue[4] = 438;
+
+
+AmazonEC2:
+	maxValue[1] = 79;
+	maxValue[2] = 38;
+	maxValue[3] = 228;
+	maxValue[4] = 767.1;
+
+
+DrupalReal:
+	maxValue[1] = 48;			
+	maxValue[2] = 336025;		
+	maxValue[3] = 17;			
+	maxValue[4] = 24152;		
+	maxValue[5] = 97342266;	
+	maxValue[6] = 3060;		
+	maxValue[7] = 555;		
+
+
+AmazonEC2Real:
+	maxValue[1] = 79;			
+	maxValue[2] = 709103;		
+	maxValue[3] = 1211;		
+	maxValue[4] = 4015;		
+	maxValue[5] = 10745;		
+	maxValue[6] = 748;		
+	maxValue[7] = 35;			
+
+
+Random:
+	maxValue[1] = 10000;		
+	maxValue[2] = 4937;		
+	maxValue[3] = 27581;		
+	maxValue[4] = 99425.7;		

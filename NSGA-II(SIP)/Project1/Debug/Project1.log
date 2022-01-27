@@ -1,8 +1,0 @@
-﻿cl : línea de comandos warning D9025: invalidando '/sdl' con '/GS-'
-  Problem.c
-  main.c
-C:\workspace\papers\AIBookChapter\OptimalProduct\NSGA-II(SIP)\NSGA-II(SIP)\main.c(58,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\workspace\papers\AIBookChapter\OptimalProduct\NSGA-II(SIP)\NSGA-II(SIP)\main.c(59,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\workspace\papers\AIBookChapter\OptimalProduct\NSGA-II(SIP)\NSGA-II(SIP)\main.c(60,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Generando código...
-  Project1.vcxproj -> C:\workspace\papers\AIBookChapter\OptimalProduct\NSGA-II(SIP)\Debug\Project1.exe
